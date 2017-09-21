@@ -7,8 +7,8 @@ export default class Login extends React.Component {
       <div>
         <h1>Login to Tiny Link</h1>
 
-        <Link to="/signup">Already have an account?</Link>
+        <Link to="/signup">Don't have an account yet? Signup here.</Link>
       </div>
-    )
+    );
   }
 }
