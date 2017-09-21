@@ -8,8 +8,6 @@ import NotFound from '../imports/ui/NotFound';
 import Login from '../imports/ui/Login';
 
 
-window.browserHistory = browserHistory;
-
 //router config
 const routes = (
   <Router history={browserHistory}>
