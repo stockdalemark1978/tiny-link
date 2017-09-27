@@ -8,11 +8,20 @@ export default class Signup extends React.Component {
       error: ''
     };
   }
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      error: "Incorrect Value"
+    });
+  }
   render() {
     return (
       <div>
         <h1>Signup to Tiny Link</h1>
-        <form>
+
+        {this.state.error ? <p>{this.state.error}</p> : undefined}
+
+        <form onSubmit={this.onSubmit.bind(this)}>
           <input type="email" name="email" placeholder="Please enter a valid email address"/>
           <input type="password" name="password" placeholder="Password"/>
           <button>Create Account</button>
