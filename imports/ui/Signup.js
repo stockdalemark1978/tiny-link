@@ -11,7 +11,7 @@ export default class Signup extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault();
-
+//uses input ref values for creating user accounts in database
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
