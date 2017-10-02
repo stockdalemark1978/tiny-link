@@ -19,6 +19,8 @@ const routes = (
   </Router>
 );
 
+window.broswerHistory = broswerHistory;
+
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
   console.log('isAuthenticated', isAuthenticated);
