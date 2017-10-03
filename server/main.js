@@ -22,7 +22,7 @@ Meteor.startup(() => {
 });
 
   employeeSchema.validate({
-    name: "",
+    name: "Larry",
     hourlyWage: 4,
     email: "stockdalemark@gmail.com"
   });
