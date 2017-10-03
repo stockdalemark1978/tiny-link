@@ -12,11 +12,17 @@ import Login from '../imports/ui/Login';
 const unauthenticatedPages = ['/', '/signup'];
 const authenticatedPages = ['/link'];
 
+const onEnterPublicPage = () => {
+  if (Meteor.userId()) {
+    browserHistory.push('/links');
+  }
+};
+
 //router config
 const routes = (
   <Router history={browserHistory}>
-    <Route path="/" component={Login}/>
-    <Route path="/signup" component={Signup}/>
+    <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
+    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
     <Route path="/link" component={Link}/>
     <Route path="*" component={NotFound}/>
   </Router>
