@@ -7,7 +7,14 @@ Meteor.startup(() => {
   // code to run on server at startup
 
 Accounts.validateNewUser((user) => {
-  console.log('hello from user', user);
+  const email = user.emails[0].address;
+
+  new SimpleSchema({
+    email: {
+      type: String,
+      regEx: SimpleSchema.RegEx.Email
+    }
+  })
   return true;
 });
 
