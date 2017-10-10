@@ -14,7 +14,7 @@ Accounts.validateNewUser((user) => {
       type: String,
       regEx: SimpleSchema.RegEx.Email
     }
-  })
+  }).validate({ email })
   return true;
 });
 
