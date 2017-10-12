@@ -1,13 +1,12 @@
 import { Meteor } from 'meteor/meteor';
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
 import { Tracker } from 'meteor/tracker';
+import { routes, onAuthChange } from '../imports/routes/routes.js';
 
 
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
-
+  onAuthChange(isAuthenticated);
 
 });
 
