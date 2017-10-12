@@ -24,6 +24,18 @@ const onEnterPrivatePage = () => {
   }
 };
 
+const onAuthChange = () => {
+  const pathname = browserHistory.getCurrentLocation().pathname;
+  const isUnauthenticatedPage = unauthenticatedPages.includes(pathname);
+  const isAuthenticatedPage = authenticatedPages.includes(pathname);
+
+  if (isUnauthenticatedPage && isAuthenticated) {
+    browserHistory.replace('/link');
+  } else if(isAuthenticatedPage && !isAuthenticated) {
+    browserHistory.replace('/');
+  };
+};
+
 //router config
 const routes = (
   <Router history={browserHistory}>

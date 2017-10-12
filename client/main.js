@@ -37,17 +37,9 @@ const routes = (
 
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
-  const pathname = browserHistory.getCurrentLocation().pathname;
-  const isUnauthenticatedPage = unauthenticatedPages.includes(pathname);
-  const isAuthenticatedPage = authenticatedPages.includes(pathname);
 
-  if (isUnauthenticatedPage && isAuthenticated) {
-    browserHistory.replace('/link');
-  } else if(isAuthenticatedPage && !isAuthenticated) {
-    browserHistory.replace('/');
-  };
 
-})
+});
 
 
 Meteor.startup(() => {
