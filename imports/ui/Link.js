@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accounts } from 'meteor/accounts-base';
+import { Links } from '../api/links';
 
 
 export default class Link extends React.Component {
@@ -7,7 +8,14 @@ export default class Link extends React.Component {
     Accounts.logout();
   }
   onSubmit(e){
+    const url = this.refs.url.value.trim();
     e.preventDefault();
+
+    if (url) {
+      Links.insert({ url });
+      this.refs.url.value = '';
+    }
+
   }
   render () {
     return (
