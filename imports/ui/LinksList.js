@@ -6,6 +6,6 @@ export default class LinksList extends React.Component {
       <div>
         <p>Links List</p>
       </div>
-    )
+    );
   }
 };
